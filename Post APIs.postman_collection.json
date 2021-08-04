@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "3a4502ee-d182-4def-9734-b82448ef97d5",
+		"name": "Post APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"admin\",\n    \"password\": \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInJvbGUiOiJBZG1pbiIsImlhdCI6MTYyODA4MTMxMX0.prUbzpVcKIEcK06n24MoOF3tOs-tqGYx1jvbF8ollro",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"covid-19\",\n    \"content\": \"pandemic\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInJvbGUiOiJBZG1pbiIsImlhdCI6MTYyODA4MTMxMX0.prUbzpVcKIEcK06n24MoOF3tOs-tqGYx1jvbF8ollro",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"update\",\n    \"content\": \"bla bla\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/posts/1",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Post",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInJvbGUiOiJBZG1pbiIsImlhdCI6MTYyODA4MTMxMX0.prUbzpVcKIEcK06n24MoOF3tOs-tqGYx1jvbF8ollro",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/posts/1",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNjI4MDgwMjEwfQ.Ry3YZpdSJ2QPxzgY4vU--tx8X6qQUEeXwM8uKGpkTXs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/posts?page=1&size=10",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
